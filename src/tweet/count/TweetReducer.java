@@ -9,9 +9,8 @@ import org.apache.hadoop.mapreduce.Reducer;
 public class TweetReducer extends Reducer<Text, IntWritable, Text, IntWritable>{
 
 	@Override
-	protected void reduce(Text key, Iterable<IntWritable> values,
-			Reducer<Text, IntWritable, Text, IntWritable>.Context context)
-			throws IOException, InterruptedException {
+	public void reduce(Text key, Iterable<IntWritable> values, Context context)
+		      throws IOException, InterruptedException {
 		int sum = 0;
 
 		//aggregate count
